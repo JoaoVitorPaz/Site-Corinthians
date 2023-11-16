@@ -29,16 +29,19 @@ body {
   align-items: center;
   height: 100%;
 }
+
 .header .container h1 {
- display: flex;
- justify-content:center ;
- height: 100%;
- align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
 }
-.header .container h1 img{
+
+.header .container h1 img {
   height: 80%;
 
 }
+
 .header a {
   text-decoration: none;
   color: #e3b062;
@@ -71,6 +74,7 @@ body {
   height: var(--tamanho-banner);
   background-image: url('../assets/imgs/Torcida.jpg');
   background-size: cover;
+  padding: 3%;
 }
 
 .banner .container {
@@ -82,7 +86,7 @@ body {
 .banner .container p {
   font-size: 36px;
   color: white;
- margin-top: 200px;
+  margin-top: 200px;
 }
 
 .banner .container span {
@@ -106,6 +110,7 @@ body {
   display: flex;
   gap: 100px;
   width: 100%;
+  padding: 10%;
 }
 
 .box {
@@ -224,7 +229,7 @@ body {
   display: none
 }
 
-.alerta_erro{
+.alerta_erro {
   display: flex;
   justify-content: flex-end;
 }
@@ -241,7 +246,7 @@ body {
   margin-right: 10%;
 }
 
-.card_erro #mensagem_erro{
+.card_erro #mensagem_erro {
   font-weight: 500;
   font-size: 20px;
 }
