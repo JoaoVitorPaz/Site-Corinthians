@@ -44,7 +44,7 @@ body {
 
 .header a {
   text-decoration: none;
-  color: #e3b062;
+  color: #ff9028e1;
 }
 
 .agora {
@@ -52,7 +52,7 @@ body {
 }
 
 .navbar {
-  width: 300px;
+  width: 400px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -256,6 +256,15 @@ body {
   width: 100%;
   background-color: #030303;
   color: #fff;
+}
+.footer2 {
+  height: var(--tamanho-footer);
+  width: 100%;
+  background-color: #030303;
+  color: #fff;
+}
+.footer2 h4 {
+  margin: 100px;
 }
 
 .footer h4 {
