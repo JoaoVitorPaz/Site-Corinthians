@@ -3,6 +3,10 @@ body {
   padding: 0;
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: black;
+  background-image: url(/Imagens/Torcida.jpg); 
+  background-repeat: no-repeat;
+  background-size: cover; 
+  
 }
 
 :root {
@@ -22,6 +26,7 @@ body {
 .header {
   height: var(--tamanho-header);
   border-bottom: 2px solid #fcfcfc;
+  background-color: black;
 }
 
 .header .container {
@@ -281,4 +286,59 @@ body {
 .footer .container .version {
   font-size: 12px;
   font-weight: 800;
+}
+.container1 {
+  position: relative;
+  /* width: 50%; */
+  display: flex;
+
+}
+
+
+.image {
+  display: block;
+  width: 250px;
+  height: 250px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* background-color: #008CBA; */
+  overflow: hidden;
+  width: 250px;
+  height: 250px;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.container1:hover .overlay {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  background-color: rgba(19, 18, 18, 0.61);
+}
+
+.text {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.allCards {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 8%;
+column-gap: 7px;
 }
