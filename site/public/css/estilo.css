@@ -2,11 +2,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: black;
-  background-image: url(/Imagens/Torcida.jpg); 
+  background-color: rgba(17, 17, 17, 0.692);
+  background-image:  url(/Imagens/arena\ corinthians.jpg) ;
   background-repeat: no-repeat;
-  background-size: cover; 
-  
+  background-attachment: fixed;
+  background-size: cover;
+
+
 }
 
 :root {
@@ -262,15 +264,17 @@ body {
   background-color: #030303;
   color: #fff;
 }
+
 .footer2 {
   height: var(--tamanho-footer);
   width: 100%;
   background-color: #030303;
   color: #fff;
 }
-.footer2 h4 {
-  margin: 100px;
-}
+
+/* .footer2 h4 {
+  margin: 80px;
+} */
 
 .footer h4 {
   margin: 0;
@@ -287,6 +291,7 @@ body {
   font-size: 12px;
   font-weight: 800;
 }
+
 .container1 {
   position: relative;
   /* width: 50%; */
@@ -297,8 +302,8 @@ body {
 
 .image {
   display: block;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 150px;
 }
 
 .overlay {
@@ -308,8 +313,8 @@ body {
   right: 0;
   /* background-color: #008CBA; */
   overflow: hidden;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 150px;
   -webkit-transform: scale(0);
   -ms-transform: scale(0);
   transform: scale(0);
@@ -335,10 +340,11 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
 .allCards {
-display: flex;
-justify-content: center;
-align-items: center;
-margin-top: 8%;
-column-gap: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8%;
+  column-gap: 7px;
 }
