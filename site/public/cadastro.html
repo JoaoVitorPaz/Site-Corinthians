@@ -21,7 +21,7 @@
   <!--header inicio-->
   <div class="header">
     <div class="container">
-      <h1 class="titulo">Corinthians</h1>
+      <h1 class="titulo"><img src="/Imagens/escudo.png" alt="">Corinthians</h1>
       <ul class="navbar">
         <li>
           <a href="index.html">Inicial</a>
@@ -29,17 +29,17 @@
         <li>|</li>
         <li>
           <a href="elenco.html">Elenco</a>
-      </li>
-      <li>
-        <a href="Idolos.html">Idolos</a>
-    </li>
-    <li class="agora">
+        </li>
+        <li>
+          <a href="Idolos.html">Idolos</a>
+        </li>
+        <li class="agora">
           <a href="#">Cadastro</a>
         </li>
         <li>
           <a href="login.html">Login</a>
         </li>
-        
+
       </ul>
     </div>
   </div>
@@ -53,7 +53,8 @@
     </div>
     <div class="container">
       <div class="card card-cadastro">
-      <br>  <h2>Bem-vindo!</h2>
+        <br>
+        <h2>Bem-vindo!</h2>
         <div class="formulario">
           <!--
                          Para inserir mais um campo, copie uma das inputs abaixo.
@@ -69,7 +70,7 @@
             <span>E-mail:</span>
             <input id="email_input" type="text" placeholder="Email" />
           </div>
-         
+
           <div class="campo">
             <span>Senha:</span>
             <input id="senha_input" type="password" placeholder="******" />
@@ -97,7 +98,7 @@
   </div>
   <!--footer fim-->
 </body>
-  
+
 
 </html>
 
@@ -111,20 +112,85 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    var emailValido =
+      emailVar.endsWith('@gmail.com') ||
+      emailVar.endsWith('@hotmail.com') ||
+      emailVar.endsWith('@outlook.com') ||
+      emailVar.endsWith('@sptech.school');
+    var nome_especial =
+      nomeVar.indexOf('1') >= 0 || nomeVar.indexOf('2') >= 0 ||
+      nomeVar.indexOf('3') >= 0 || nomeVar.indexOf('4') >= 0 ||
+      nomeVar.indexOf('5') >= 0 || nomeVar.indexOf('7') >= 0 ||
+      nomeVar.indexOf('8') >= 0 || nomeVar.indexOf('9') >= 0 ||
+      nomeVar.indexOf('0') >= 0 || nomeVar.indexOf('!') >= 0 ||
+      nomeVar.indexOf('@') >= 0 || nomeVar.indexOf('6') >= 0 ||
+      nomeVar.indexOf('#') >= 0 || nomeVar.indexOf('%') >= 0 ||
+      nomeVar.indexOf('¨') >= 0 || nomeVar.indexOf('&') >= 0 ||
+      nomeVar.indexOf('*') >= 0 || nomeVar.indexOf('-') >= 0 ||
+      nomeVar.indexOf('(') >= 0 || nomeVar.indexOf('_') >= 0 ||
+      nomeVar.indexOf(')') >= 0 || nomeVar.indexOf('+') >= 0 ||
+      nomeVar.indexOf('$') >= 0 || nomeVar.indexOf('=') >= 0 ||
+      nomeVar.indexOf('ç') >= 0 || nomeVar.indexOf(',') >= 0 ||
+      nomeVar.indexOf('{') >= 0 || nomeVar.indexOf(':') >= 0 ||
+      nomeVar.indexOf('}') >= 0 || nomeVar.indexOf(';') >= 0 ||
+      nomeVar.indexOf('[') >= 0 || nomeVar.indexOf('|') >= 0 ||
+      nomeVar.indexOf('/') >= 0 || nomeVar.indexOf('º') >= 0 ||
+      nomeVar.indexOf('?') >= 0 || nomeVar.indexOf('°') >= 0;
 
     if (
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == ""  
+      confirmacaoSenhaVar == ""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
+        "(Não é permitido campos em branco)";
 
       finalizarAguardar();
       return false;
-    } else {
+    }
+    else if (nome_especial) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Não é permitido Caracteres especiais no campo nome)";
+
+      finalizarAguardar();
+      return false;
+
+    } else if (nomeVar.length < 3) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Não é permitido nomes com menos de 3 letras)";
+
+      finalizarAguardar();
+      return false;
+
+    }
+    else if (senhaVar.length < 8) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(A senha deve conter no minimo 8 digitos)";
+
+      finalizarAguardar();
+      return false;
+    } else if (senhaVar != confirmacaoSenhaVar) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(A confirmação de senha não corresponde com senha informada)";
+
+      finalizarAguardar();
+      return false;
+    }
+    else if (emailValido == false) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Este tipo de email não é aceito em nosso banco de dados)";
+
+      finalizarAguardar();
+      return false;
+    }
+    else {
       setInterval(sumirMensagem, 5000);
     }
 
