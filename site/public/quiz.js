@@ -3,6 +3,7 @@ const questoesContainer = document.querySelector(".questoes-container")
 const respostaContainer = document.querySelector(".resposta-container")
 const textoQuestao = document.querySelector(".questoes")
 const botaoProximo = document.querySelector(".proximo-quiz")
+const bemVindo = document.querySelector(".desafio")
 
 começarGame.addEventListener("click", start)
 botaoProximo.addEventListener("click", displayProximaPergunta)
@@ -13,6 +14,7 @@ var acertos = 0;
 function start() {
     começarGame.classList.add("hide")
     questoesContainer.classList.remove("hide")
+    bemVindo.classList.add("hide")
     displayProximaPergunta()
 
 
