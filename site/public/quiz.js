@@ -8,6 +8,8 @@ const bemVindo = document.querySelector(".desafio")
 começarGame.addEventListener("click", start)
 botaoProximo.addEventListener("click", displayProximaPergunta)
 
+NomeUsuario.innerHTML = sessionStorage.getItem("NOME_USUARIO")
+
 var questãoIndex = 0;
 var acertos = 0;
 
@@ -71,19 +73,25 @@ function selectAnswer(event) {
     questãoIndex++
 }
 function fimDeJogo() {
-    totalPerguntas = perguntas.length
+    var totalPerguntas = perguntas.length
+    var desempenho = Math.floor(acertos * 100 / totalPerguntas)
+
     var mensagem = ""
-    if (acertos >= 0 && acertos <= 3) {
-        mensagem = "Precisa Melhorar :("
-    } else if (acertos >= 4 && acertos <= 6) {
-        mensagem = "Você está ná média :/"
-    } else if (acertos >= 7 && acertos <= 9) {
-        mensagem = "Você é incrivel! faltou muito pouco :)"
-    } else {
-        mensagem = "Você gabaritou, realmente você é membro da fiel "
+
+    if (desempenho >= 90) {
+        mensagem = "Você realmente conhece o timão"
     }
-    
-    questoesContainer.innerHTML=`
+    else if (desempenho >= 70) {
+        mensagem = "Você foi muito bem!"
+    }
+    else if (desempenho >= 50) {
+        mensagem = "Eh... Tá na média"
+    }
+    else if (desempenho < 50) {
+        mensagem = "Pelo amor do futebol... Você pode melhorar"
+    }
+
+    questoesContainer.innerHTML = `
 <p class="mensagem-final">
 Você <span style="color: green;"> acertou</span> ${acertos} questões de ${totalPerguntas}!
 <span style="color: blue;">Feedback:</span>${mensagem}
@@ -93,9 +101,19 @@ Você <span style="color: green;"> acertou</span> ${acertos} questões de ${tota
 Refazer Quiz
 </button>
 </div>
+<div class="botaoComparar">
+<button onclick=comparar() class="button">
+Comparar resultados
+</button>
+</div>
    `
 }
 
+function comparar(){
+
+    
+
+}
 
 
 
@@ -114,9 +132,9 @@ const perguntas = [
         question: "Quantas libertadores o Corinthians tem?",
         respostas: [
             { Text: "3", correct: false },
-            { Text: "1", correct: false },
-            { Text: "2", correct: true },
-            { Text: "Nenhuma", correct: false }
+            { Text: "Nenhuma", correct: false },
+            { Text: "2", correct: false},
+            { Text: "1", correct: true }
         ]
     },
     {

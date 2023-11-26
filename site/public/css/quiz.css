@@ -118,6 +118,13 @@ button:not(:disabled):hover {
     align-items: center;
     padding: 30px;
 }
+.botaoComparar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
  
 
 .controle-container {
