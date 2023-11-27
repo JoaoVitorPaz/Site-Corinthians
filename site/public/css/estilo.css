@@ -154,7 +154,8 @@ body {
 
 
 .box p {
-  text-align: center;
+
+  text-align: justify;
 }
 
 .login {
