@@ -12,7 +12,7 @@ body {
 
 .idolos h2 {
   color: rgb(255, 255, 255);
-  font-family: 'Bungee Spice';
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 19px;
   display: flex;
   justify-content: center;
@@ -21,14 +21,15 @@ body {
 
 }
 
+
 .elenco h2 {
   color: rgb(252, 252, 252);
-  font-family: 'Bungee Spice';
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 19px;
   margin-top: 5%;
   display: flex;
   justify-content: center;
-  margin-top: 5%;
+
   font-size: 25px;
 
 }
@@ -269,13 +270,15 @@ body {
 
 .card_erro {
   display: none;
-  background-color: #fff;
-  color: black;
+  background-color: #000000;
+  color: rgb(255, 252, 252);
   width: 230px;
   position: fixed;
   border-radius: 4px;
-  border: #080808 3px solid;
+  border: #fcfcfc 3px solid;
   padding: 10px;
+  margin-top: 50px;
+  text-align: center;
   margin-right: 10%;
 }
 

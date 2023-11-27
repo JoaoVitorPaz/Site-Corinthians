@@ -8,7 +8,9 @@ CREATE TABLE usuario (
 	nome VARCHAR(50),
 	email VARCHAR(50),
 	senha VARCHAR(50)
-) auto_increment=100;
+);
+
+describe elenco;
 
 
 create table elenco(
@@ -18,7 +20,7 @@ dataNascimento date,
 posicao varchar(40))
 auto_increment=100;
 
-describe idolos;
+
 
 create table idolos(
 id int primary key auto_increment,
@@ -122,7 +124,26 @@ INSERT INTO elenco VALUES
 (NULL, 'Yuri Alberto Monteiro da Silva', '2001-03-18', 'atacante');
 
 
+select*from usuario;
+  create table quiz
+  (id int auto_increment,
+  pontuação int,
+  fkUsuario int,
+constraint fkUsuario foreign key (fkUsuario) references usuario(id),
+primary key (id, fkUsuario));
 
+select*from quiz;
+
+
+create table NickName(
+idNick int auto_increment,
+nickName varchar(45),
+fkID int,
+constraint fkID foreign key (fkID) references usuario(id),
+primary key (idNick, fkID));
+
+
+  
 
 
 

@@ -1,64 +1,122 @@
 <DOCTYPE html>
-<html lang="en">
-<head>
+  <html lang="en">
+
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/Imagens/escudo.png">
     <link rel="stylesheet" href="/css/quiz.css">
     <script src="quiz.js" async> </script>
-    <title>Quiz</title>
-</head>
-<body>
-       <div>
-        <div class="header1">
-          <div class="container1">
-            <h1 class="titulo"><img src="/Imagens/escudo.png" alt="">Corinthians</h1>
-            <ul class="navbar1">
-              <li>
-                <a href="index.html">Inicial</a>
-              </li>
-              <li>|</li>
-              <li>
-                <a href="elenco.html">Elenco</a>
-              </li>
-              <li>
-                <a href="Idolos.html">Idolos</a>
-              </li>
-              <li class="agora">
-                <a href="Quiz.html">Desafio</a>
-              </li>
-              <li >
-                <a href="cadastro.html">Cadastro</a>
-              </li>
-              <li>
-                <a href="login.html">Login</a>
-              </li>
-      
-            </ul>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>SCCP | Quiz</title>
+  </head>
+
+  <body>
+
+    <div>
+      <div class="header1">
+        <div class="container1">
+          <h1 class="titulo"><img src="/Imagens/escudo.png" alt="">Corinthians</h1>
+          <ul class="navbar1">
+            <li>
+              <a href="index.html">Inicial</a>
+            </li>
+            <li>|</li>
+            <li>
+              <a href="elenco.html">Elenco</a>
+            </li>
+            <li>
+              <a href="Idolos.html">Idolos</a>
+            </li>
+            <li class="agora">
+              <a href="Quiz.html">Desafio</a>
+            </li>
+            <li>
+              <a href="cadastro.html">Cadastro</a>
+            </li>
+            <li>
+              <a href="login.html">Login</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+      <!--header fim-->
+    </div>
+
+
+
+
+    <div class="divQuiz">
+      <div class="container">
+        <div class="questoes-container hide">
+
+          <span class="questoes">Pergunta</span>
+          <div class="resposta-container">
+            <button class="resposta button"></button>
+            <button class="resposta button"></button>
+            <button class="resposta button"></button>
+            <button class="resposta button"></button>
           </div>
         </div>
-        <!--header fim-->
-    </div> 
-   
-        
-    <div class="divQuiz">
-    <div class="container">
-        <div class="questoes-container hide">
-            <span class="questoes">Pergunta</span>
-            <div class="resposta-container">
-            <button class="resposta button"></button>
-            <button class="resposta button"></button>
-            <button class="resposta button"></button>
-            <button class="resposta button"></button>
-       </div>
-     </div>
-      <div class="desafio">Bem vindo ao desafio <span id="NomeUsuario"></span> ! Você realmente é bom?</div>  
-<div class="controle-container">
-    <button class="iniciar-quiz button">Iniciar Quiz</button>
-    <button class="proximo-quiz button hide">Proxima Pergunta </button>
+        <div class="desafio">Bem vindo ao desafio <span id="NomeUsuario"></span> ! Você realmente é bom?</div>
+        <div class="controle-container">
+          <button class="iniciar-quiz button">Iniciar Quiz</button>
+          <button class="proximo-quiz button hide">Proxima Pergunta </button>
 
-</div>
+        </div>
+      </div>
     </div>
-</div>
-    
-</body>
-</html>
+    <!-- <div class="tentativas">
+      <style>
+        table {
+      border-collapse: collapse;  
+      width: 100vh;
+      background-color: rgba(255, 253, 253, 0.808);
+      font-size: 20px;
+      color: black;
+      justify-content: center;
+      align-items: center;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+      .cabecalho{
+        color: black;
+      }
+      .cabecalho th{
+        text-align: center;
+      }
+      
+      td, th {
+      border: 1px solid black;
+      text-align: center;
+      padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+      background-color: rgba(255, 253, 253, 0);
+      }
+      </style>
+      <table>
+        <th>id Quiz</th>
+        <th>pontuação </th>
+        <th>usuario</th>
+
+        <td></td>
+        <td></td>
+        <td></td>
+
+
+      </table>
+
+
+
+    </div> -->
+
+
+    <div style="width: 50px;
+height: 50px;"></div>
+
+  </body>
+  </div>
+
+  </html>

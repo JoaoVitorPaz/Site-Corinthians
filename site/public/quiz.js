@@ -101,19 +101,98 @@ Você <span style="color: green;"> acertou</span> ${acertos} questões de ${tota
 Refazer Quiz
 </button>
 </div>
-<div class="botaoComparar">
-<button onclick=comparar() class="button">
-Comparar resultados
+<div class="botaoFinal">
+<button onclick=detalhar() class="button">
+Detalhar
 </button>
 </div>
    `
 }
-
-function comparar(){
-
+var idUsuario= sessionStorage.ID_USUARIO
+function detalhar(){
+    var totalPerguntas = perguntas.length
+    var desempenho = Math.floor(acertos * 100 / totalPerguntas)
     
+    questoesContainer.innerHTML = `
+    <p class="mensagem-final">
+    Ao responder ${acertos} questões corretamente, você  <span style="color: green;"> acertou</span> ${desempenho}%
+    do Quiz
+    </p>
+    <div class="graficoPai" >
+    <div class="grafico" >
+    <canvas id="myChart"></canvas>
+  </div>
+  </div>
 
-}
+    <div class="botaoFinal">
+    <button onclick=window.location.reload() class="button">
+    Refazer Quiz
+    </button>
+    </div>
+
+       `
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Errou', 'Acertou'],
+        datasets: [{
+          label: '# of Votes',
+          data: [totalPerguntas-acertos, acertos],
+          backgroundColor: ['#ff0000', '#33ff00'],
+          borderWidth: 1
+        }]
+      },
+      
+    });
+
+
+    fetch("/usuarios/quiz", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          pontuacaoServer: acertos,
+          IDServer: idUsuario
+          
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+  
+        //   if (resposta.ok) {
+  
+        //     mensagem_erro.innerHTML =
+        //       "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+  
+        //     setTimeout(() => {
+        //       window.location = "login.html";
+        //     }, "2000");
+  
+        //     limparFormulario();
+        //     finalizarAguardar();
+        //   } else {
+        //     throw "Houve um erro ao tentar realizar o cadastro!";
+        //   }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+       
+        });
+  
+      return false;
+    }
+
+
+       
+
+
+   
+    
 
 
 
@@ -215,3 +294,4 @@ const perguntas = [
 
 
 ]
+
