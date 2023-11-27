@@ -8,7 +8,7 @@ const bemVindo = document.querySelector(".desafio")
 começarGame.addEventListener("click", start)
 botaoProximo.addEventListener("click", displayProximaPergunta)
 
-NomeUsuario.innerHTML = sessionStorage.getItem("NOME_USUARIO")
+NomeUsuario.innerHTML = sessionStorage.getItem("NICKNAME")
 
 var questãoIndex = 0;
 var acertos = 0;

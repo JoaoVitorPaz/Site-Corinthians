@@ -71,7 +71,10 @@
             <span>E-mail:</span>
             <input id="email_input" type="text" placeholder="Email" />
           </div>
-          
+          <div class="campo">
+            <span>Nick Name:</span>
+            <input id="nick_input" type="text" placeholder="Nick Name" />
+          </div>
 
           <div class="campo">
             <span>Senha:</span>
@@ -112,6 +115,7 @@
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
     var emailVar = email_input.value;
+    var nickVar = nick_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
     var emailValido =
@@ -142,6 +146,7 @@
     if (
       nomeVar == "" ||
       emailVar == "" ||
+      nickVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == ""
     ) {
@@ -213,6 +218,7 @@
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
         emailServer: emailVar,
+        nickServer:nickVar,
         senhaServer: senhaVar,
       }),
     })

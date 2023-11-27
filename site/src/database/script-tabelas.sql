@@ -142,7 +142,8 @@ fkID int,
 constraint fkID foreign key (fkID) references usuario(id),
 primary key (idNick, fkID));
 
-
+select*from nickname;
+delete from usuario where id=5;
   
 
 
