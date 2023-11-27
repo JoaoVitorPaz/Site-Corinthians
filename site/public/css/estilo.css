@@ -152,6 +152,7 @@ body {
   align-items: center;
 }
 
+
 .box p {
   text-align: center;
 }
@@ -291,7 +292,13 @@ body {
   height: var(--tamanho-footer);
   width: 100%;
   background-color: #030303;
-  color: #fff;
+  color: #fd0000;
+  border-top: 3px solid white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+  
+  
+  
 }
 
 .footer2 {
@@ -377,4 +384,23 @@ body {
   align-items: center;
   margin-top: 8%;
   column-gap: 7px;
+}
+.historia{
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+.historia h1{
+  text-align: center;
+  color: orange;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.historia .corinthians{
+  color: white;
+  text-align: center;
+  width: 55%;
+  font-family: monospace;
+  font-style: oblique;
+  font-size: 16px;
 }
