@@ -134,6 +134,7 @@ primary key (id, fkUsuario));
 
 select*from quiz;
 
+-- alter table quiz add column fkNick int references NickName(idNick);
 
 create table NickName(
 idNick int auto_increment,
@@ -143,7 +144,9 @@ constraint fkID foreign key (fkID) references usuario(id),
 primary key (idNick, fkID));
 
 select*from nickname;
-delete from usuario where id=5;
+
+select*from usuario;
+describe quiz;
   
 
 
